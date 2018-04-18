@@ -28,22 +28,33 @@ Vector2<Typename> vec;
 > **y**: y value/component of the 2D vector
 
 #### Constructors
-> Default Constructor with default x ans y values as 0
->
-> Vector2i()
+<dl>
+  <dt>Default Constructor with default x and y values as 0</dt>
+    <dd>Vector2i</dd>
+  <dt>Parameters:</dt>
+    <dd>None</dd>
+  <dt>Return:</dt>
+    <dd>new Vector2i</dd>
+</dl>
 
 ```cpp
 Vector2i vec; // vec.x = 0 and vec.y = 0
 
-Vector2i* p_vec = new Vector2i; // p_vec->x = 0 and p_vec_>y = 0
+Vector2i* p_vec = new Vector2i; // p_vec->x = 0 and p_vec->y = 0
 ```
 
-> Constructor with values
->
-> Vector2i(x,y)
+<dl>
+  <dt>Constructor with values</dt>
+    <dd>Vector2i(x,y)</dd>
+  <dt>Parameters:</dt>
+    <dd>value **x** of the Vector2</dd>
+    <dd>value **y** of the Vector2</dd>
+  <dt>Return:</dt>
+    <dd>new Vector2i</dd>
+</dl>
 
 ```cpp
 Vector2i vec(3,4); // vec.x = 3 and vec.y = 4
 
-Vector2i* p_vec = new Vector2i(4, 6); // p_vec->x = 4 and p_vec_>y = 6
+Vector2i* p_vec = new Vector2i(4, 6); // p_vec->x = 4 and p_vec->y = 6
 ```
