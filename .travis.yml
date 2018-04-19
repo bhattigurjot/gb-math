@@ -2,9 +2,7 @@ dist: trusty
 sudo: require
 
 language: cpp
-compiler:
-    - clang
-    - gcc
+compiler: gcc
 
 before_script:
     - mkdir build
