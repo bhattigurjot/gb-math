@@ -191,6 +191,30 @@ TEST_CASE("Vector2 division as v/=scaler", "[vector2]") {
 	REQUIRE(vecd.y == 1.5);
 }
 
+TEST_CASE("Vector2 magnitude", "[vector2]") {
+	veci.Set(4, 3);
+	vecf.Set(4.0f, 3.0f);
+	vecd.Set(4.0, 3.0);
+
+	REQUIRE(veci.Magnitude() == 5);
+	REQUIRE(vecf.Magnitude() == 5.0f);
+	REQUIRE(vecd.Magnitude() == 5.0);
+}
+
+TEST_CASE("Vector2 dot product", "[vector2]") {
+	veci.Set(4, 3);
+	vecf.Set(4.0f, 3.0f);
+	vecd.Set(4.0, 3.0);
+
+	Vector2i a(2, 1);
+	Vector2f b(2.0f, 1.0f);
+	Vector2d c(2.0, 1.0);
+
+	REQUIRE(veci.Dot(a) == 11);
+	REQUIRE(vecf.Dot(b) == 11.0f);
+	REQUIRE(vecd.Dot(c) == 11.0);
+}
+
 int main(int argc, char* argv[])
 {
 	int result = Catch::Session().run(argc, argv);

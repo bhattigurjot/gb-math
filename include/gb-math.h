@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 // Vector 2d template class
 template<class T>
 class Vector2
@@ -27,6 +29,15 @@ public:
 	void SetX(T _x) { x = _x; }
 	// Set y value
 	void SetY(T _y) { y = _y; }
+
+	// Magnitude/Length of vector
+	T Magnitude() {
+		return sqrt((x * x) + (y * y));
+	}
+	// Dot product of 2 vector
+	T Dot(const Vector2<T>& _vec) {
+		return (x * _vec.x + y * _vec.y);
+	}
 
 	// Static functions
 	static const Vector2<T> Zero;
