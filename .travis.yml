@@ -3,14 +3,14 @@ sudo: require
 
 language: cpp
 compiler:
-	- clang
-	- gcc
+    - clang
+    - gcc
 
 before_script:
-	- mkdir build
-	- cd build
-	- cmake ..
+    - mkdir build
+    - cd build
+    - cmake ..
 
 script:
-	- pwd
-	- make
+    - pwd
+    - make
