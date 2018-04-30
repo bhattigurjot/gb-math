@@ -229,6 +229,23 @@ TEST_CASE("Vector2 cross product", "[vector2]") {
 	REQUIRE(vecd.Cross(c) == -2.0);
 }
 
+TEST_CASE("Vector2 normalize", "[vector2]") {
+	veci.Set(4, 3);
+	vecf.Set(4.0f, 3.0f);
+	vecd.Set(4.0, 3.0);
+
+	veci.Normalize();
+	vecf.Normalize();
+	vecd.Normalize();
+
+	REQUIRE(veci.x == 0);
+	REQUIRE(veci.y == 0);
+	REQUIRE(vecf.x == 0.8f);
+	REQUIRE(vecf.y == 0.6f);
+	REQUIRE(vecd.x == 0.8);
+	REQUIRE(vecd.y == 0.6);
+}
+
 int main(int argc, char* argv[])
 {
 	int result = Catch::Session().run(argc, argv);

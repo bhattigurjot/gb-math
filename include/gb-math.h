@@ -32,7 +32,13 @@ public:
 
 	// Magnitude/Length of vector
 	T Magnitude() {
-		return sqrt((x * x) + (y * y));
+		return static_cast<T>(sqrt((x * x) + (y * y)));
+	}
+	// Normalize vector
+	void Normalize() {
+		T val = static_cast<T>(sqrt((x * x) + (y * y)));
+		x = static_cast<T>(x/val);
+		y = static_cast<T>(y/val);
 	}
 	// Dot product of 2 vector
 	T Dot(const Vector2<T>& _vec) {
