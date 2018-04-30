@@ -215,6 +215,20 @@ TEST_CASE("Vector2 dot product", "[vector2]") {
 	REQUIRE(vecd.Dot(c) == 11.0);
 }
 
+TEST_CASE("Vector2 cross product", "[vector2]") {
+	veci.Set(4, 3);
+	vecf.Set(4.0f, 3.0f);
+	vecd.Set(4.0, 3.0);
+
+	Vector2i a(2, 1);
+	Vector2f b(2.0f, 1.0f);
+	Vector2d c(2.0, 1.0);
+
+	REQUIRE(veci.Cross(a) == -2);
+	REQUIRE(vecf.Cross(b) == -2.0f);
+	REQUIRE(vecd.Cross(c) == -2.0);
+}
+
 int main(int argc, char* argv[])
 {
 	int result = Catch::Session().run(argc, argv);

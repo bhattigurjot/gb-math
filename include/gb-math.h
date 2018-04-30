@@ -38,6 +38,10 @@ public:
 	T Dot(const Vector2<T>& _vec) {
 		return (x * _vec.x + y * _vec.y);
 	}
+	// Cross product of 2 vector
+	T Cross(const Vector2<T>& _vec) {
+		return (x * _vec.y - y * _vec.x);
+	}
 
 	// Static functions
 	static const Vector2<T> Zero;
