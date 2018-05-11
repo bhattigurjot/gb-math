@@ -102,6 +102,7 @@ const Vector2<T> Vector2<T>::Zero(static_cast<T>(0), static_cast<T>(0));
 template<class T>
 const Vector2<T> Vector2<T>::Unit(static_cast<T>(1), static_cast<T>(1));
 
-typedef Vector2<int> Vector2i;
-typedef Vector2<float> Vector2f;
-typedef Vector2<double> Vector2d;
+// Type alias
+using Vector2i = Vector2<int>;
+using Vector2f = Vector2<float>;
+using Vector2d = Vector2<double>;
