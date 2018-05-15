@@ -52,6 +52,10 @@ public:
 	// Static functions
 	static const Vector2<T> Zero;
 	static const Vector2<T> Unit;
+	static const Vector2<T> Up;
+	static const Vector2<T> Down;
+	static const Vector2<T> Left;
+	static const Vector2<T> Right;
 
 	// Vector Mathematics
 	Vector2<T> operator+(const Vector2<T>& _vec) {
@@ -101,6 +105,18 @@ const Vector2<T> Vector2<T>::Zero(static_cast<T>(0), static_cast<T>(0));
 
 template<class T>
 const Vector2<T> Vector2<T>::Unit(static_cast<T>(1), static_cast<T>(1));
+
+template<class T>
+const Vector2<T> Vector2<T>::Up(static_cast<T>(0), static_cast<T>(1));
+
+template<class T>
+const Vector2<T> Vector2<T>::Down(static_cast<T>(0), static_cast<T>(-1));
+
+template<class T>
+const Vector2<T> Vector2<T>::Left(static_cast<T>(-1), static_cast<T>(0));
+
+template<class T>
+const Vector2<T> Vector2<T>::Right(static_cast<T>(1), static_cast<T>(0));
 
 // Type alias
 using Vector2i = Vector2<int>;
