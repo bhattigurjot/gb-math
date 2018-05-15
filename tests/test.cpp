@@ -93,6 +93,58 @@ SCENARIO("Vector2 default objects are created", "[vector2]") {
 			REQUIRE(vecd.y == 1.0);
 		}
 	}
+	GIVEN("Vector2 up object is created") {
+		veci = Vector2i::Up;
+		vecf = Vector2f::Up;
+		vecd = Vector2d::Up;
+		THEN("x,y components get values (0,1) respectively") {
+			REQUIRE(veci.x == 0);
+			REQUIRE(veci.y == 1);
+			REQUIRE(vecf.x == 0.0f);
+			REQUIRE(vecf.y == 1.0f);
+			REQUIRE(vecd.x == 0.0);
+			REQUIRE(vecd.y == 1.0);
+		}
+	}
+	GIVEN("Vector2 down object is created") {
+		veci = Vector2i::Down;
+		vecf = Vector2f::Down;
+		vecd = Vector2d::Down;
+		THEN("x,y components get values (0,-1) respectively") {
+			REQUIRE(veci.x == 0);
+			REQUIRE(veci.y == -1);
+			REQUIRE(vecf.x == 0.0f);
+			REQUIRE(vecf.y == -1.0f);
+			REQUIRE(vecd.x == 0.0);
+			REQUIRE(vecd.y == -1.0);
+		}
+	}
+	GIVEN("Vector2 left object is created") {
+		veci = Vector2i::Left;
+		vecf = Vector2f::Left;
+		vecd = Vector2d::Left;
+		THEN("x,y components get values (-1,0) respectively") {
+			REQUIRE(veci.x == -1);
+			REQUIRE(veci.y == 0);
+			REQUIRE(vecf.x == -1.0f);
+			REQUIRE(vecf.y == 0.0f);
+			REQUIRE(vecd.x == -1.0);
+			REQUIRE(vecd.y == 0.0);
+		}
+	}
+	GIVEN("Vector2 right object is created") {
+		veci = Vector2i::Right;
+		vecf = Vector2f::Right;
+		vecd = Vector2d::Right;
+		THEN("x,y components get values (1,0) respectively") {
+			REQUIRE(veci.x == 1);
+			REQUIRE(veci.y == 0);
+			REQUIRE(vecf.x == 1.0f);
+			REQUIRE(vecf.y == 0.0f);
+			REQUIRE(vecd.x == 1.0);
+			REQUIRE(vecd.y == 0.0);
+		}
+	}
 }
 
 SCENARIO("Vector2 set values", "[vector2]") {
