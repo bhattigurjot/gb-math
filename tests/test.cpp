@@ -256,10 +256,21 @@ SCENARIO("Vector2 utility functions", "[vector2]") {
 			REQUIRE(vecd.Dot(c) == 11.0);
 		}
 
+		WHEN("dot product is calculated, on static call") {
+			REQUIRE(Vector2i::Dot(veci, a) == 11);
+			REQUIRE(Vector2f::Dot(vecf, b) == 11.0f);
+			REQUIRE(Vector2d::Dot(vecd, c) == 11.0);
+		}
+
 		WHEN("cross product is calculated") {
 			REQUIRE(veci.Cross(a) == -2);
 			REQUIRE(vecf.Cross(b) == -2.0f);
 			REQUIRE(vecd.Cross(c) == -2.0);
+		}
+		WHEN("cross product is calculated, on static call") {
+			REQUIRE(Vector2i::Cross(veci, a) == -2);
+			REQUIRE(Vector2f::Cross(vecf, b) == -2.0f);
+			REQUIRE(Vector2d::Cross(vecd, c) == -2.0);
 		}
 	}
 }

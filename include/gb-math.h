@@ -30,41 +30,58 @@ public:
 		y(_vec.y)
 	{}
 
+	////////////////////
+	// Public Methods //
+	////////////////////
+
 	// Set both values
 	void Set(T _x, T _y) { x = _x; y = _y; }
+
 	// Set x value
 	void SetX(T _x) { x = _x; }
+
 	// Set y value
 	void SetY(T _y) { y = _y; }
 
 	// Magnitude/Length of vector
-	T Magnitude() {
+	T Magnitude() const {
 		return static_cast<T>(sqrt((x * x) + (y * y)));
 	}
+
 	// Normalize vector
 	void Normalize() {
 		T val = static_cast<T>(sqrt((x * x) + (y * y)));
 		x = static_cast<T>(x/val);
 		y = static_cast<T>(y/val);
 	}
+
 	// Dot product of 2 vector
 	T Dot(const Vector2<T>& _vec) {
 		return (x * _vec.x + y * _vec.y);
 	}
+
 	// Cross product of 2 vector
 	T Cross(const Vector2<T>& _vec) {
 		return (x * _vec.y - y * _vec.x);
 	}
 
-	// Static functions
+	//////////////////////
+	// Static functions //
+	//////////////////////
+
 	static const Vector2<T> Zero;
 	static const Vector2<T> Unit;
 	static const Vector2<T> Up;
 	static const Vector2<T> Down;
 	static const Vector2<T> Left;
 	static const Vector2<T> Right;
+	static T Dot(const Vector2<T>& _vecA, const Vector2<T>& _vecB);
+	static T Cross(const Vector2<T>& _vecA, const Vector2<T>& _vecB);
 
-	// Vector Mathematics
+	////////////////////////
+	// Operator functions //
+	////////////////////////
+
 	Vector2<T> operator+(const Vector2<T>& _vec) {
 		// v = a + b
 		return Vector2<T>(x + _vec.x, y + _vec.y);
@@ -124,6 +141,15 @@ const Vector2<T> Vector2<T>::Left(static_cast<T>(-1), static_cast<T>(0));
 
 template<class T>
 const Vector2<T> Vector2<T>::Right(static_cast<T>(1), static_cast<T>(0));
+
+template<class T>
+T Vector2<T>::Dot(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
+	return (_vecA.x * _vecB.x + _vecA.y * _vecB.y);
+}
+template<class T>
+T Vector2<T>::Cross(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
+	return (_vecA.x * _vecB.y - _vecA.y * _vecB.x);
+}
 
 // Type alias
 using Vector2i = Vector2<int>;
