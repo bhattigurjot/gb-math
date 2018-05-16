@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GB_MATH_H
+#define GB_MATH_H
 
 #include <cmath>
 
@@ -128,3 +129,5 @@ const Vector2<T> Vector2<T>::Right(static_cast<T>(1), static_cast<T>(0));
 using Vector2i = Vector2<int>;
 using Vector2f = Vector2<float>;
 using Vector2d = Vector2<double>;
+
+#endif // GB_MATH_H
