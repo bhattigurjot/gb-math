@@ -51,13 +51,32 @@ SCENARIO("Vector2 objects are created", "[vector2]") {
 			Vector2i *p_veci = new Vector2i(2, 3);
 			Vector2f *p_vecf = new Vector2f(2.0f, 3.0f);
 			Vector2d *p_vecd = new Vector2d(2.0, 3.0);
-			THEN("x,y components are zero") {
+			THEN("x,y components are correctly set") {
 				REQUIRE(p_veci->x == 2);
 				REQUIRE(p_veci->y == 3);
 				REQUIRE(p_vecf->x == 2.0f);
 				REQUIRE(p_vecf->y == 3.0f);
 				REQUIRE(p_vecd->x == 2.0);
 				REQUIRE(p_vecd->y == 3.0);
+			}
+		}
+	}
+	GIVEN("Vector2 constructor with another Vector2") {
+		WHEN("object is created") {
+			Vector2i vec_i(2, 3);
+			Vector2f vec_f(2.0f, 3.0f);
+			Vector2d vec_d(2.0, 3.0);
+			
+			Vector2i veci(vec_i);
+			Vector2f vecf(vec_f);
+			Vector2d vecd(vec_d);
+			THEN("x,y components are correctly set") {
+				REQUIRE(veci.x == 2);
+				REQUIRE(veci.y == 3);
+				REQUIRE(vecf.x == 2.0f);
+				REQUIRE(vecf.y == 3.0f);
+				REQUIRE(vecd.x == 2.0);
+				REQUIRE(vecd.y == 3.0);
 			}
 		}
 	}

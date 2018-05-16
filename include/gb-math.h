@@ -23,6 +23,12 @@ public:
 		y(_y)
 	{}
 
+	// Copy constructor
+	Vector2(const Vector2<T>& _vec) :
+		x(_vec.x),
+		y(_vec.y)
+	{}
+
 	// Set both values
 	void Set(T _x, T _y) { x = _x; y = _y; }
 	// Set x value
