@@ -285,6 +285,20 @@ SCENARIO("Vector2 utility functions", "[vector2]") {
 			REQUIRE(Vector2f::compareFD(Vector2f::Distance(vecf, b), 2.82843f) == true);
 			REQUIRE(Vector2d::compareFD(Vector2d::Distance(vecd, c), 2.82843) == true);
 		}
+
+		// TODO: Needs refactoring
+		WHEN("angle between 2 vectors is calculated") {
+			REQUIRE(Vector2d::compareFD(veci.Angle(a), 0.1798534998) == true);
+			REQUIRE(Vector2f::compareFD(vecf.Angle(b), 0.1798534998) == true);
+			REQUIRE(Vector2d::compareFD(vecd.Angle(c), 0.1798534998) == true);
+		}
+
+		// TODO: Needs refactoring
+		WHEN("angle between 2 vectors is calculated, on static call") {
+			REQUIRE(Vector2d::compareFD(Vector2i::Angle(veci, a), 0.1798534998) == true);
+			REQUIRE(Vector2f::compareFD(Vector2f::Angle(vecf, b), 0.1798534998) == true);
+			REQUIRE(Vector2d::compareFD(Vector2d::Angle(vecd, c), 0.1798534998) == true);
+		}
 	}
 }
 
