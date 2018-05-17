@@ -65,6 +65,14 @@ public:
 		return (x * _vec.y - y * _vec.x);
 	}
 
+	// Euclidean Distance between 2 vectors
+	T Distance(const Vector2<T>& _vec) {
+		return static_cast<T>(sqrt(
+			((x - _vec.x)*(x - _vec.x)) +
+			((y - _vec.y)*(y - _vec.y))
+		));
+	}
+
 	//////////////////////
 	// Static functions //
 	//////////////////////
@@ -77,6 +85,7 @@ public:
 	static const Vector2<T> Right;
 	static T Dot(const Vector2<T>& _vecA, const Vector2<T>& _vecB);
 	static T Cross(const Vector2<T>& _vecA, const Vector2<T>& _vecB);
+	static T Distance(const Vector2<T>& _vecA, const Vector2<T>& _vecB);
 
 	////////////////////////
 	// Operator functions //
@@ -149,6 +158,13 @@ T Vector2<T>::Dot(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 template<class T>
 T Vector2<T>::Cross(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 	return (_vecA.x * _vecB.y - _vecA.y * _vecB.x);
+}
+template<class T>
+T Vector2<T>::Distance(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
+	return static_cast<T>(sqrt(
+		((_vecA.x - _vecB.x)*(_vecA.x - _vecB.x)) + 
+		((_vecA.y - _vecB.y)*(_vecA.y - _vecB.y))
+	));
 }
 
 // Type alias
