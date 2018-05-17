@@ -267,20 +267,23 @@ SCENARIO("Vector2 utility functions", "[vector2]") {
 			REQUIRE(vecf.Cross(b) == -2.0f);
 			REQUIRE(vecd.Cross(c) == -2.0);
 		}
+
 		WHEN("cross product is calculated, on static call") {
 			REQUIRE(Vector2i::Cross(veci, a) == -2);
 			REQUIRE(Vector2f::Cross(vecf, b) == -2.0f);
 			REQUIRE(Vector2d::Cross(vecd, c) == -2.0);
 		}
+
 		WHEN("distance between 2 vectors is calculated") {
 			REQUIRE(veci.Distance(a) == 2);
-			REQUIRE(vecf.Distance(b) == 2.82843f);
-			REQUIRE(vecd.Distance(c) == 2.82843);
+			REQUIRE(Vector2f::compareFD(vecf.Distance(b), 2.82843f) == true);
+			REQUIRE(Vector2d::compareFD(vecd.Distance(c), 2.82843) == true);
 		}
+
 		WHEN("distance between 2 vectors is calculated, on static call") {
 			REQUIRE(Vector2i::Distance(veci, a) == 2);
-			REQUIRE(Vector2f::Distance(vecf, b) == 2.82843f);
-			REQUIRE(Vector2d::Distance(vecd, c) == 2.82843);
+			REQUIRE(Vector2f::compareFD(Vector2f::Distance(vecf, b), 2.82843f) == true);
+			REQUIRE(Vector2d::compareFD(Vector2d::Distance(vecd, c), 2.82843) == true);
 		}
 	}
 }

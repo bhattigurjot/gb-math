@@ -77,6 +77,7 @@ public:
 	// Static functions //
 	//////////////////////
 
+	static bool compareFD(const T &a, const T &b);
 	static const Vector2<T> Zero;
 	static const Vector2<T> Unit;
 	static const Vector2<T> Up;
@@ -134,6 +135,11 @@ public:
 };
 
 template<class T>
+bool Vector2<T>::compareFD(const T &a, const T &b) {
+	return (std::fabs(a - b) < static_cast<T>(0.005));
+}
+
+template<class T>
 const Vector2<T> Vector2<T>::Zero(static_cast<T>(0), static_cast<T>(0));
 
 template<class T>
@@ -155,10 +161,12 @@ template<class T>
 T Vector2<T>::Dot(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 	return (_vecA.x * _vecB.x + _vecA.y * _vecB.y);
 }
+
 template<class T>
 T Vector2<T>::Cross(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 	return (_vecA.x * _vecB.y - _vecA.y * _vecB.x);
 }
+
 template<class T>
 T Vector2<T>::Distance(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 	return static_cast<T>(sqrt(
