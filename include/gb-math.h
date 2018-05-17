@@ -57,20 +57,17 @@ public:
 
 	// Dot product of 2 vector
 	T Dot(const Vector2<T>& _vec) {
-		return (x * _vec.x + y * _vec.y);
+		return Dot(*this, _vec);
 	}
 
 	// Cross product of 2 vector
 	T Cross(const Vector2<T>& _vec) {
-		return (x * _vec.y - y * _vec.x);
+		return Cross(*this, _vec);
 	}
 
 	// Euclidean Distance between 2 vectors
 	T Distance(const Vector2<T>& _vec) {
-		return static_cast<T>(sqrt(
-			((x - _vec.x)*(x - _vec.x)) +
-			((y - _vec.y)*(y - _vec.y))
-		));
+		return Distance(*this, _vec);
 	}
 
 	// Angle between 2 vectors
