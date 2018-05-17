@@ -181,9 +181,9 @@ T Vector2<T>::Distance(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
 // TODO: Update/Refactor to optimize
 template<class T>
 double Vector2<T>::Angle(const Vector2<T>& _vecA, const Vector2<T>& _vecB) {
-	Vector2d t_vecA(static_cast<double>(_vecA.x), static_cast<double>(_vecA.y));
-	Vector2d t_vecB(static_cast<double>(_vecB.x), static_cast<double>(_vecB.y));
-	return (acos(Vector2d::Dot(t_vecA, t_vecB) / (t_vecA.Magnitude() * t_vecB.Magnitude())));
+	Vector2<double> t_vecA(static_cast<double>(_vecA.x), static_cast<double>(_vecA.y));
+	Vector2<double> t_vecB(static_cast<double>(_vecB.x), static_cast<double>(_vecB.y));
+	return (acos(Vector2<double>::Dot(t_vecA, t_vecB) / (t_vecA.Magnitude() * t_vecB.Magnitude())));
 }
 
 // Type alias
