@@ -225,6 +225,14 @@ SCENARIO("Vector2 utility functions", "[vector2]") {
 			}
 		}
 
+		WHEN("magnitudesquared function is called") {
+			THEN("return the scalar value of the vector") {
+				REQUIRE(veci.MagnitudeSquared() == 25);
+				REQUIRE(vecf.MagnitudeSquared() == 25.0f);
+				REQUIRE(vecd.MagnitudeSquared() == 25.0);
+			}
+		}
+
 		WHEN("normalize function is called") {
 			veci.Normalize();
 			vecf.Normalize();

@@ -48,6 +48,11 @@ public:
 		return static_cast<T>(sqrt((x * x) + (y * y)));
 	}
 
+	// Magnitude/Length squared of vector
+	T MagnitudeSquared() const {
+		return static_cast<T>((x * x) + (y * y));
+	}
+
 	// Normalize vector
 	void Normalize() {
 		T val = static_cast<T>(sqrt((x * x) + (y * y)));
